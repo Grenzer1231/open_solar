@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: Basic seed model for the DuckDB warehouse.
+    columns:
+      - name: id
+        tests:
+          - unique
+          - not_null
+      - name: source
+        description: Identifier for the record origin.
+
+  - name: aggregated_sources
+    description: Aggregates counts of records by source.
+    columns:
+      - name: source
+        tests:
+          - not_null
+      - name: record_count
+        tests:
+          - not_null
