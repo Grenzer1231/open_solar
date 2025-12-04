@@ -36,4 +36,4 @@ The DuckDB database will be created at `data/warehouse.duckdb` by default; you c
 1. **id** is the identifier for the proposal entity. Multiple occurences of the same **id** refers to the revisions/updates
 2. **created_date** refers to the creation if the  proposal entity in the system. If **proposal_date** < **created_date**, then the proposal was created and sent outside the system
 before it was created in the system.
-
+3. 2 fact tables were created: 1 for the latest state of the proposal entity and 1 for the historical states

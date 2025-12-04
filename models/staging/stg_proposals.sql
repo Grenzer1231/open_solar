@@ -48,8 +48,8 @@ standardize_proposals AS (
             WHEN address IN ('-', '') THEN NULL
             ELSE address
         END AS address,
-        state as raw_state,
-        standardized_state AS state,
+        UPPER(state) as raw_state,
+        UPPER(standardized_state) AS state,
         stage,
         notes,
         created_date::TIMESTAMP AS created_date,
