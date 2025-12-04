@@ -1,7 +1,16 @@
 data_tests:
   - name: assert_proposal_sent_after_created
     description: >
-      Refunds have a negative amount, so the total amount should always be >= 0.
-      Therefore return records where total amount < 0 to make the test fail.
+      Check for proposals where the proposal_sent_date is earlier than the created_date.
+    config:
+      severity: warn
+  - name: assert_fct_proposal_latest_sent_after_created
+    description: >
+      Check for proposals where the proposal_sent_date is earlier than the created_date.
+    config:
+      severity: warn
+  - name: assert_fct_proposal_historical_sent_after_created
+    description: >
+      Check for proposals where the proposal_sent_date is earlier than the created_date.
     config:
       severity: warn

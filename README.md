@@ -25,3 +25,15 @@ This repository contains a minimal dbt project configured to run against a local
    ```
 
 The DuckDB database will be created at `data/warehouse.duckdb` by default; you can update `profiles.yml` to change the location or schema.
+
+## Assumptions
+
+### Set-up
+1. We have an ingestion pipeline that dumps data in our data warehouse
+
+
+### Data
+1. **id** is the identifier for the proposal entity. Multiple occurences of the same **id** refers to the revisions/updates
+2. **created_date** refers to the creation if the  proposal entity in the system. If **proposal_date** < **created_date**, then the proposal was created and sent outside the system
+before it was created in the system.
+
