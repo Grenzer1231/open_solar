@@ -3,6 +3,6 @@ open_solar:
   outputs:
     dev:
       type: duckdb
-      path: data/warehouse.duckdb
+      path: data/warehouse.db
       schema: analytics
       threads: 4

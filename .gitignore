@@ -3,13 +3,9 @@
 /dbt_packages/
 /logs/
 
-# local data
-/data/
-*.duckdb
-*.duckdb-wal
-
 # python
 __pycache__/
 *.pyc
 .env
 .venv
+*.ipynb
