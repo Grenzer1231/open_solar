@@ -16,6 +16,8 @@ SELECT
     notes,
     created_date,
     modified_date,
+    priority,
+    country_id,
     org_id,
     proposal_sent_date,
     is_lite

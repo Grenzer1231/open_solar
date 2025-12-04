@@ -3,8 +3,12 @@ version: 2
 models:
   - name: fct_proposals_historical
     description: >
-      Staged proposal records sourced from the raw_proposals.
+      Staged proposal records sourced from the stg_proposals.
       Contains the latest state of proposals as ingested from the staging layer.
+    config:
+      tags:
+        - fct
+        - proposals
 
     columns:
       - name: surrogate_key

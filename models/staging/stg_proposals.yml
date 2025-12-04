@@ -6,6 +6,10 @@ models:
       Staged proposal records sourced from the raw_proposals.
       Contains the historical state of proposals as ingested from the source system,
       with cleaned and standardized fields for downstream consumption.
+    config:
+      tags:
+        - staging
+        - proposals
 
     columns:
       - name: id
