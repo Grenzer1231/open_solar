@@ -20,8 +20,8 @@ This repository contains a minimal dbt project configured to run against a local
 4. Run and test the project:
 
    ```bash
-   dbt run --profiles-dir .
-   dbt test --profiles-dir .
+   dbt run --select tag:proposals --profiles-dir .
+   dbt test --select tag:proposals --profiles-dir .
    ```
 
 The DuckDB database will be created at `data/warehouse.duckdb` by default; you can update `profiles.yml` to change the location or schema.
