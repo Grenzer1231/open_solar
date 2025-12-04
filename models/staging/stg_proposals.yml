@@ -1,0 +1,57 @@
+version: 2
+
+models:
+  - name: stg_proposals
+    description: >
+      Staged proposal records sourced from the raw_proposals.
+      Contains the historical state of proposals as ingested from the source system,
+      with cleaned and standardized fields for downstream consumption.
+
+    columns:
+      - name: id
+        description: Unique identifier for the underlying proposal.
+        data_tests:
+          - not_null
+
+      - name: address
+        description: Physical or mailing address associated with the proposal.
+
+      - name: raw_state
+        description: Raw state value as captured from the source system.
+
+      - name: state
+        description: Cleaned and standardized Australian state code  
+                     (e.g., NSW, VIC, QLD, etc.)
+
+      - name: stage
+        description: Current lifecycle stage of the proposal in the source system.
+
+      - name: priority
+        description: Priority value assigned to the proposal.
+
+      - name: notes
+        description: Optional notes or commentary captured in the proposal process.
+
+      - name: created_date
+        description: Timestamp when the proposal was first created in the system.
+        tests:
+          - not_null
+
+      - name: modified_date
+        description: Timestamp of the latest recorded update to the proposal state.
+        data_tests:
+          - not_null
+
+      - name: proposal_sent_date
+        description: Timestamp when the proposal was formally sent to the customer (may be null).
+
+      - name: country_id
+        description: Country identifier from the upstream source.
+
+      - name: org_id
+        description: Organization identifier linked to the proposal.
+
+      - name: is_lite
+        description: Flag for lightweight proposal versions (0 = standard, 1 = lite).
+        data_tests:
+          - not_null

@@ -13,4 +13,8 @@ snapshot-paths: ['snapshots']
 
 models:
   open_solar_dbt:
-    +materialized: view
+    +materialized: table
+
+seeds:
+  open_solar_dbt:
+    +schema: analytics

@@ -1,0 +1,8 @@
+version: 2
+sources:
+  - name: raw_proposals
+    description: "Raw proposals ingested from source system."
+    schema: raw
+    tables:
+      - name: raw_proposals
+        description: "Table containing raw proposal records."
